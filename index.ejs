@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Letters</title>
+
+    <style>
+        h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .box {
+            background-color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            font-size: medium;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <%if (locals.numberOfLetters) { %>
+        <h1>There are <%=numberOfLetters%> in you name.</h1>
+        <% } else { %>
+            <h1>Write your name below 👇</h1>
+            <% } %>
+                <form action="/submit" method="POST">
+                    <input class="box" type="text" name="fName" placeholder="First Name">
+                    <input class="box" type="text" name="lName" placeholder="Last Name">
+                    <input class="box" type="submit" value="OK">
+                </form>
+</body>
+
+</html>
